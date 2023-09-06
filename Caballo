@@ -1,0 +1,27 @@
+# Solicitar al usuario ingresar la fila inicial (1-8)
+fila_inicial = int(input("Ingrese la fila inicial (1-8): "))
+
+# Solicitar al usuario ingresar la columna inicial (1-8)
+columna_inicial = int(input("Ingrese la columna inicial (1-8): "))
+
+# Definir los movimientos posibles del caballo
+movimientos_caballo = [
+    (-2, -1), (-2, 1),
+    (-1, -2), (-1, 2),
+    (1, -2), (1, 2),
+    (2, -1), (2, 1)
+]
+
+# Verificar que los valores ingresados son válidos
+if 1 <= fila_inicial <= 8 and 1 <= columna_inicial <= 8:
+    # Mostrar las posiciones a las que puede moverse el caballo
+    print("Posiciones a las que puede moverse el caballo:")
+    for movimiento in movimientos_caballo:
+        nueva_fila = fila_inicial + movimiento[0]
+        nueva_columna = columna_inicial + movimiento[1]
+
+        # Verificar si la nueva posición está dentro del tablero
+        if 1 <= nueva_fila <= 8 and 1 <= nueva_columna <= 8:
+            print(f"({nueva_fila}, {nueva_columna})")
+else:
+    print("Las posiciones ingresadas no son válidas")
