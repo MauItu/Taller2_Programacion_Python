@@ -1,0 +1,22 @@
+#Declaro los variables
+positivos = 0  
+negativos = 0  
+
+print("Ingrese varios valores enteros (ingrese 0 para terminar):")
+
+while True:
+    num = int(input())  # Solicitamos al usuario ingresar un número entero
+
+    if num > 0:
+        positivos += 1  # Incrementamos el contador de números positivos si es positivo
+    elif num < 0:
+        negativos += 1  # Incrementamos el contador de números negativos si es negativo
+
+    if num == 0:
+        break  # Si el número ingresado es 0, salimos del bucle
+
+# Mostramos un gráfico de asteriscos para representar los números positivos
+print("positivos: " + "*" * positivos)
+
+# Mostramos un gráfico de asteriscos para representar los números negativos
+print("negativos: " + "*" * negativos)
