@@ -1,3 +1,4 @@
+# Declarar las variables
 hora = 0
 minuto = 0
 tramo = 0
@@ -9,12 +10,13 @@ print("Ingrese cuanto dura cada tramo, e ingrese cero para terminar de dar los t
 while True:
     print("Ingrese cuánto duró en minutos el tramo número " + str(canTramos))
     tramo = int(input())
-    suma += tramo
+    suma += tramo  # Suma acumulada de la duración de cada tramo
 
     if tramo == 0:
+#Calcular el tiempo de viaje en hora y el residuo son los minutos restantes
         hora = suma // 60
         minuto = suma % 60
-
+        #condiciones para saber si escribir xx:xx o 0x:xx o xx:0x o 0x:0x
         if hora >= 10 and minuto >= 10:
             print("El recorrido durará " + str(hora) + ":" + str(minuto))
         elif hora < 10 and minuto >= 10:
@@ -23,7 +25,7 @@ while True:
             print("El recorrido durará " + str(hora) + ":0" + str(minuto))
         else:
             print("El recorrido durará 0" + str(hora) + ":0" + str(minuto))
-        
+        #Break para cerrar el bucle
         break
 
     canTramos += 1
