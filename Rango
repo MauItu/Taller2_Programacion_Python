@@ -1,0 +1,25 @@
+print("Ingrese la cantidad de datos a ingresar: ")
+cantidad_datos = int(input())
+
+if cantidad_datos <= 0:
+    print("La cantidad de datos debe ser un número positivo.")
+else:
+    datos = []
+    maximo = float('-inf')
+    minimo = float('inf')
+
+    # Leer los datos uno por uno y encontrar el máximo y el mínimo
+    for i in range(cantidad_datos):
+        print(f"Ingrese el dato {i + 1}: ")
+        dato = float(input())
+        datos.append(dato)
+
+        if dato > maximo:
+            maximo = dato
+
+        if dato < minimo:
+            minimo = dato
+
+    # Calcular y mostrar el rango de los datos
+    rango = maximo - minimo
+    print(f"El rango de los datos es: {rango}")
