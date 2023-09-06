@@ -1,0 +1,26 @@
+import random
+
+# Crear el numero que hay que adivinar
+numero_secreto = random.randint(0, 100)
+intentos = 5
+
+print(numero_secreto)
+print("Tienes " + str(intentos) + " intentos restantes.")
+
+num_ingresado = 0
+
+while intentos > 0:
+    print("Tienes " + str(intentos) + " intentos restantes.")
+    num_ingresado = int(input())
+    #Mensaje de que acerto el numero
+    if num_ingresado == numero_secreto:
+        print("¡Felicidades, acertaste!")
+        #Break para cerrar el bucle
+        break
+    #Pistas de si el numero es amyor o menor
+    elif num_ingresado < numero_secreto:
+        print("El número es mayor.")
+    else:
+        print("El número es menor.")
+    #contador de intentos
+    intentos -= 1
