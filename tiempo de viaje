@@ -1,0 +1,29 @@
+hora = 0
+minuto = 0
+tramo = 0
+suma = 0
+canTramos = 1
+
+print("Ingrese cuanto dura cada tramo, e ingrese cero para terminar de dar los tramos")
+
+while True:
+    print("Ingrese cuánto duró en minutos el tramo número " + str(canTramos))
+    tramo = int(input())
+    suma += tramo
+
+    if tramo == 0:
+        hora = suma // 60
+        minuto = suma % 60
+
+        if hora >= 10 and minuto >= 10:
+            print("El recorrido durará " + str(hora) + ":" + str(minuto))
+        elif hora < 10 and minuto >= 10:
+            print("El recorrido durará 0" + str(hora) + ":" + str(minuto))
+        elif hora >= 10 and minuto < 10:
+            print("El recorrido durará " + str(hora) + ":0" + str(minuto))
+        else:
+            print("El recorrido durará 0" + str(hora) + ":0" + str(minuto))
+        
+        break
+
+    canTramos += 1
